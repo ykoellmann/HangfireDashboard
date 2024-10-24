@@ -1,0 +1,11 @@
+﻿services:
+  hangfire-dashboard:
+    image: hangfiredashboard
+    container_name: hangfire-dashboard
+    build:
+      context: .
+      dockerfile: HangfireDashboard/Dockerfile
+    environment:
+      - ConnectionStrings__DbConnection=User Id=postgres;Password=postgres;Server=192.168.178.41;Port=5432;Database=postgres;Integrated Security=true;Pooling=true;
+    ports:
+      - "7000:8080"
